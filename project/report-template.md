@@ -15,14 +15,14 @@ I did the exploratory analysis by first creating a histogram of the features - t
 For adding additional features, I separated out the datetime features into month and year, to give a better idea of how the demand changes depending on the month, and any trends over the years.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-I was expecting a greater change in my model performance after adding more features, but I only saw a difference of 0.101% - it might be due to an error on my part, or the way I added the new features, this would require a more detailed analysis. 
+I was expecting a greater change in my model performance after adding more features, but I only saw a difference of 0.101% - it might be due to an error on my part, or the way I added the new features, this would require further troubleshooting. 
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
 Following Hyper parameter tuning, the model performed better, having an increase in accuracy of ~8% (1.44560 for initial, compared to 1.33722 score in the final). This could potentially be further improved by testing alternative AutoGluon higher level parameters.
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-It would be useful to spend more time on exploratory data analysis, as I would like to really understand the data and find any outliers that might affect the model preformance. This might also have helped in identifying more interesting features, that I could have included in the second run of the model to provide better data insights. I  would also like to spend more time identifying why the model scores did not change much after adding more features. 
+It would be useful to spend more time on exploratory data analysis, as I would like to really understand the data and find any outliers that might affect the model preformance. This might also have helped in identifying more interesting features, that I could have included in the second run of the model to provide better data insights. I  would also like to spend more time identifying why in my case, the model scores did not change much after adding more features. 
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
@@ -33,11 +33,11 @@ It would be useful to spend more time on exploratory data analysis, as I would l
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
-![model_train_score.png](model_train_score.png)
+![model_train_score.png](img/my_model_train_score.png)
 
 ### Create a line plot showing the top kaggle score for the three (or more) prediction submissions during the project.
 
-![model_test_score.png](model_test_score.png)
+![model_test_score.png](img/my_model_test_score.png)
 
 ## Summary
-
+By performing Exploratory Data Analysis (EDA) and selecting informative features, we can improve the accuracy of our model and increase confidence in the predictions generated from the Bike Sharing dataset. AutoGluon further enhances model performance through automated hyperparameter tuning, allowing us to go beyond default settings and identify optimal configurations. This makes AutoGluon a powerful tool for efficient and effective model selection. However, it's also important to be mindful of overfitting, especially when tuning hyperparameters or selecting features, to ensure the model generalizes well to unseen data.
