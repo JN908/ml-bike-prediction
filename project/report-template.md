@@ -15,21 +15,22 @@ I did the exploratory analysis by first creating a histogram of the features - t
 For adding additional features, I separated out the datetime features into month and year, to give a better idea of how the demand changes depending on the month, and any trends over the years.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-I was expecting a greater change in my model performance after adding more features, but I only saw a difference of 0.101% - it might be due to an error on my part, or the way I added the new features, this would require further troubleshooting. 
+I was expecting a greater change in my model performance after adding more features, but initially only saw a difference of 0.101% - it might be due to an error on my part, or the way I added the new features, this would require further troubleshooting.
+Following adding the feature hour, the model preformed much better, with the score improving to 0.47288. This highlighted the importance of adding meaningful features, as a feature like hour can provide a much greater insight and predictability power.
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-Following Hyper parameter tuning, the model performed better, having an increase in accuracy of ~8% (1.44560 for initial, compared to 1.33722 score in the final). This could potentially be further improved by testing alternative AutoGluon higher level parameters.
+Following Hyper parameter tuning, the model did not preform as well as using the default parameters, with a slight increase to 0.56944 from 0.47288, however still a great improvement when comparing with the initial model performance (initial score 1.44560).
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-It would be useful to spend more time on exploratory data analysis, as I would like to really understand the data and find any outliers that might affect the model preformance. This might also have helped in identifying more interesting features, that I could have included in the second run of the model to provide better data insights. I  would also like to spend more time identifying why in my case, the model scores did not change much after adding more features. 
+It would be useful to spend more time on exploratory data analysis, as I would like to really understand the data and find any outliers that might affect the model preformance. This might also have helped in identifying more interesting features, particularly focusing on time of day, that I could have included in the second run of the model to provide a stronger and more accurate prediction.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
 |--|--|--|--|--|
 |initial|train_data|eval_metric|Presets|1.44560|
-|add_features|train_new_cols|eval_metric|presets|1.44414|
-|hpo|train_new_cols|eval_metric|hyperparameter_tune_kwargs|1.33722|
+|add_features|train_new_cols|eval_metric|presets|0.47288|
+|hpo|train_new_cols|eval_metric|hyperparameter_tune_kwargs|0.56944|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
