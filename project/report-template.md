@@ -7,23 +7,22 @@ I used predictor.describe() to check the minimum values, to ensure there are no 
 
 
 ### What was the top ranked model that performed?
-Looking at predictor.leaderboard(), the best ranking model appeared to be WeightedEnsemble_L3.
+To get the top ranked model, I tried to use predictor.get_model_best(), but got an error 'TabularPredictor' object has no attribute 'get_model_best', using Autogluon version 1.4.0. My mentor in the Knowledge portal suggested predictor.leaderboard() as an alternative, which showed the best ranking model as WeightedEnsemble_L3.
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
 I did the exploratory analysis by first creating a histogram of the features - this showed the distribution of each feature, and was useful in highlighting any extreme outliers, and showing that we have a mix of features, some of which show a relatively normal distribution (atemp), bimodal (workingday and holiday), and skewed (count). 
-For adding additional features, I separated out the datetime features into month and year, to give a better idea of how the demand changes depending on the month, and any trends over the years.
+For adding additional features, I separated out the datetime features into hour, month and year, to give a better idea of how the demand changes depending time of day, month, and any trends over the years.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-I was expecting a greater change in my model performance after adding more features, but initially only saw a difference of 0.101% - it might be due to an error on my part, or the way I added the new features, this would require further troubleshooting.
-Following adding the feature hour, the model preformed much better, with the score improving to 0.47288. This highlighted the importance of adding meaningful features, as a feature like hour can provide a much greater insight and predictability power.
+I was expecting a greater change in my model performance after adding more features, but initially only saw a difference of 0.101% (initial score 1.44560). This was due to me initially not using hour as a feature. Following adding hour, the model preformed much better, with the score improving to 0.47288. This highlighted the importance of adding meaningful features, as they can provide a much greater insight and predictability power.
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-Following Hyper parameter tuning, the model did not preform as well as using the default parameters, with a slight increase to 0.56944 from 0.47288, however still a great improvement when comparing with the initial model performance (initial score 1.44560).
+Following Hyper parameter tuning, the model did not preform as well as using the default parameters with the hour feature added, showing a slight increase to 0.56944 from 0.47288, however still a great improvement when comparing with the initial model performance (initial score 1.44560).
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
-It would be useful to spend more time on exploratory data analysis, as I would like to really understand the data and find any outliers that might affect the model preformance. This might also have helped in identifying more interesting features, particularly focusing on time of day, that I could have included in the second run of the model to provide a stronger and more accurate prediction.
+It would be useful to spend more time on exploratory data analysis, as I would like to really understand the data and find any outliers that might affect the model preformance. This might also have helped in identifying more interesting features, particularly focusing on time of day, that I could have included to provide a stronger and more accurate prediction.
 
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
